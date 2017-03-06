@@ -20,14 +20,14 @@ class FederalSiteResource(DjangoResource):
             # Only return those sites that issue the Every Kid in a Park pass
             everykid = True
 
-        query = FederalSite.objects.all().order_by('name')
+        query = FederalSite.objects.all()
 
         if state:
             query = FederalSite.objects.filter(state=state)
         if everykid:
             query = query.filter(access_pass=True, active_participant=True)
 
-        return query
+        return query.order_by('name')
 
 
 class FieldTripResource(DjangoResource):
