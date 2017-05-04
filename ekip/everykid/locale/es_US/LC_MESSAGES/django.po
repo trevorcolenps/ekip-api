@@ -154,12 +154,11 @@ msgstr "Estos sitios nos pertenecen a todos, también a ti."
 
 #: templates/about.html:21
 msgid ""
-"President Barack Obama created Every Kid in a Park so fourth graders and "
-"their families could discover our wildlife, resources, and history for free."
+"Every Kid in a Park was created so fourth graders and their families "
+"could discover our wildlife, resources, and history for free."
 msgstr ""
-"El presidente Barack Obama creó Todos los Niños en un Parque para que los "
-"estudiantes de 4º grado y sus familias puedan descubrir gratuitamente "
-"nuestra vida silvestre, recursos naturales e historia. "
+"Cada niño en un parque fue creado para que los estudiantes de cuarto grado y sus familias "
+"pudieran descubrir nuestra fauna, recursos e historia de forma gratuita."
 
 #: templates/about.html:24
 msgid "Partner agencies and more"
