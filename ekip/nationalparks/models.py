@@ -43,7 +43,7 @@ class FieldTripSite(models.Model):
     city = models.CharField(max_length=128, null=True)
     state = USStateField(blank=False, null=False, db_index=True)
     website = models.URLField(max_length=512)
-    slug = models.SlugField(unique=True, null=True)
+    slug = models.SlugField(max_length=128, unique=True, null=True)
     address_line_1 = models.CharField(max_length=256, null=True)
     zipcode = USZipCodeField(null=True)
 
@@ -68,7 +68,7 @@ class FieldTripSite(models.Model):
         if not self.id:
             name = self.name
             name = name.replace('National Wildlife Refuge', 'NWR')
-            self.slug = slugify(self.agency + name)[:50]
+            self.slug = slugify(self.agency + name)[:128]
         super(FieldTripSite, self).save(*args, **kwargs)
 
     class Meta:
@@ -99,7 +99,7 @@ class FederalSite(models.Model):
     city = models.CharField(max_length=128)
     state = USStateField(blank=False, null=False, db_index=True)
     website = models.URLField(max_length=512)
-    slug = models.SlugField(unique=True, null=True)
+    slug = models.SlugField(max_length=128, unique=True, null=True)
     annual_pass = models.BooleanField(
         default=False, help_text="True if the site offers an annual pass")
     senior_pass = models.BooleanField(
